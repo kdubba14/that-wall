@@ -8,7 +8,7 @@ import "./App.css";
 const App = props => {
   // CONTEXT API
   const UserData = useContext(UserContext);
-  
+
   // FOR User info and Token from localStorage
   // Can put user info into Context API instead
   let LocalUser = localStorage.getItem("that_wall_user");
@@ -43,8 +43,8 @@ const App = props => {
       return (
         <div className="posts">
           <div className="posts-container">
-            {postsState.map(post => (
-              <Post post={post} />
+            {postsState.map((post, i) => (
+              <Post key={i} post={post} />
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ const App = props => {
     logOut(true);
     localStorage.removeItem("that_wall_user");
     localStorage.removeItem("that_wall_auth");
-  }
+  };
 
   const _enterPostHandler = e => {
     if (e.key === "Enter" && newPost.length > 0) {
@@ -101,7 +101,7 @@ const App = props => {
         })
         .catch(err => console.log(err));
     }
-  }
+  };
 
   return (
     <div className="App">
@@ -110,10 +110,7 @@ const App = props => {
           <div className="user">
             <h4>{username()}</h4>
           </div>
-          <button
-            className="btn"
-            onClick={_logoutHandler}
-          >
+          <button className="btn" onClick={_logoutHandler}>
             Logout
           </button>
         </div>

@@ -83,8 +83,8 @@ const App = props => {
       return (
         <div className="posts">
           <div className="posts-container">
-            {postsState.map(post => (
-              <Post post={post} />
+            {postsState.map((post, i) => (
+              <Post key={i} post={post} />
             ))}
           </div>
         </div>
@@ -150,10 +150,11 @@ const App = props => {
     <div className="App">
       <header className="App-header">
         <div className="container for-header">
-          <div className="forms">
+          <form className="forms">
             <input
               type="email"
               placeholder="Email"
+              autoComplete="email"
               onChange={e => {
                 setEmail(e.target.value);
               }}
@@ -161,11 +162,12 @@ const App = props => {
             <input
               type="password"
               placeholder="Password"
+              autoComplete="current-password"
               onChange={e => {
                 setPassword(e.target.value);
               }}
             />
-          </div>
+          </form>
           <button className="btn" onClick={_loginHandler}>
             Login
           </button>
