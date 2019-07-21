@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+input::placeholder {
+  color: #ad985c;
+}
+
 .btn {
   outline: none !important;
 }
@@ -49,10 +53,10 @@
 .forms input {
   width: 100%;
   height: 1em;
-  background-color: rgba(252, 250, 250, 0.3);
-  color: black;
+  background-color: transparent;
+  color: #fcfafa;
   margin: 0.5em 0em;
-  border: 0.1em solid #fcfafa;
+  border: 0.05em solid #fcfafa;
   border-radius: 5px;
   outline: none !important;
   font-size: 1em;
@@ -71,7 +75,7 @@
   min-height: 15vh;
   font-size: 1em;
   color: #140705;
-  background-color: #ff614d;
+  background-color: #232452;
   display: flex;
   justify-content: center;
 }
@@ -145,7 +149,7 @@ button:hover {
 
 .type-box {
   min-height: 15vh;
-  background-color: #ff614d;
+  background-color: #232452;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,9 +159,8 @@ button:hover {
 .type-box input {
   width: 100%;
   height: 7.5vh;
-  background-color: rgba(252, 250, 250, 0.3);
-  color: black;
-  border: 0.1em solid #fcfafa;
+  color: #fcfafa;
+  border: 0.05em solid #fcfafa;
   border-radius: 5px;
   outline: none !important;
   font-size: 1em;
