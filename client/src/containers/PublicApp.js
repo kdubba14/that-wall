@@ -109,7 +109,9 @@ const App = props => {
   // FOR Logging in
   const _loginHandler = () => {
     axios.post("/api/login", { email, password }).then(response => {
-      if (response.data.success) {
+      if (response.data.success === false) {
+        showError(response.data.message);
+      } else if (response.data.success === true) {
         localStorage.setItem("that_wall_auth", response.data.token);
 
         UserData.setUserInfo(response.data.user);
