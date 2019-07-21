@@ -38,6 +38,8 @@ const App = props => {
   }, [addedPosts]);
 
   // To show posts or "Loading..."
+  //Duplicate of function on PUBLIC page
+  // Create "functions" folder?"
   const loadedPosts = () => {
     if (postsState.length > 0) {
       return (

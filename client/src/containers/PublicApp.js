@@ -4,6 +4,7 @@ import { UserContext } from "../containers/UserContext";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Post from "../components/Post";
+import MessageBox from "../components/MessageBox";
 import "./App.css";
 
 // "/login"
@@ -70,11 +71,7 @@ const App = props => {
   const messageBoxView = () => {
     let content = messageBox();
 
-    return (
-      <div className={`message-box ${content.color}`}>
-        <p>{content.message}</p>
-      </div>
-    );
+    return <MessageBox content={content} />;
   };
 
   // To show posts or "Loading..."
